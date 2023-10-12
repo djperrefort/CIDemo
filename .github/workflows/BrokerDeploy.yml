@@ -4,7 +4,6 @@ on:
   release:
     types: [ released ]
 
-
 jobs:
   test:
     name: Tests
@@ -19,4 +18,4 @@ jobs:
 
   documentation:
     name: Documentation
-    uses: ../.github/workflows/DocumentationDeploy.yml
+    uses: ./.github/workflows/DocumentationDeploy.yml
