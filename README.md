@@ -17,3 +17,5 @@ The CI in this repository supports the following workflow:
    - Runs the application test suites (just in case)
    - Publishes the microservices
    - Publishes a new copy of the documentation under the version number specified in the release
+
+This is my edit
