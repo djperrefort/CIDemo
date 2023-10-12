@@ -25,6 +25,7 @@ jobs:
         run: |
           # Find application directories containing a 'tests' subdirectory nd format the result as JSON
           test_dirs=$(find broker -type d -name "tests" -exec dirname {} \; | jq -R . | jq -s . | tr -d '\n')
+          echo "found $test_dirs"
           echo "matrix={\"app_name\":$test_dirs}" >> $GITHUB_OUTPUT
 
   test:
