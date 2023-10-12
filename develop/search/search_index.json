@@ -1,1 +1,1 @@
-{"config":{"indexing":"full","lang":["en"],"min_search_length":3,"prebuild_index":false,"separator":"[\\s\\-]+"},"docs":[{"location":"","text":"CI Demo Welcome to the documentation for the CI demo!","title":"CI Demo"},{"location":"#ci-demo","text":"Welcome to the documentation for the CI demo!","title":"CI Demo"}]}
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"CI Demo","text":"<p>Welcome to the documentation for the CI demo!</p>"}]}
