@@ -26,7 +26,7 @@ jobs:
           # Find application directories containing a 'tests' subdirectory nd format the result as JSON
           test_dirs=$(find broker -type d -name "tests" -exec dirname {} \; | jq -R . | jq -s . | tr -d '\n')
           echo "found $test_dirs"
-          echo "matrix={\"app_name\":$test_dirs}" >> $GITHUB_OUTPUT
+          echo "matrix={\"app_dir\":$test_dirs}" >> $GITHUB_OUTPUT
 
   test:
     name: Test Microservices
@@ -49,10 +49,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install coverage
-          pip install -r ${{ matrix.app_name }}/requirements.txt
+          pip install -r ${{ matrix.app_dir }}/requirements.txt
 
-      - name: Test ${{ matrix.app_name }} app
-        run: coverage run -m unittest discover  ${{ matrix.app_name }}
+      - name: Test ${{ matrix.app_dir }} app
+        run: coverage run -m unittest discover  ${{ matrix.app_dir }}
 
   report-status:
     name: Report Test Status
