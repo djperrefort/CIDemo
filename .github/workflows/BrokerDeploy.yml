@@ -18,4 +18,4 @@ jobs:
 
   documentation:
     name: Documentation
-    uses: ./.github/workflows/DocumentationDeploy.yml
+    uses: ./.github/workflows/DocumentationPublish.yml
