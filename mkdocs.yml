@@ -1,13 +1,22 @@
 site_name: CI Demo
 theme:
-  name: readthedocs
-  highlightjs: true
-  include_homepage_in_sidebar: true
-  prev_next_buttons_location: bottom
+  name: material
+  features:
+    - content.code.copy
+    - search.suggest
+    - navigation.tabs
+    - navigation.sections
+    - content.code.annotate
 plugins:
-  - search:
-  - mkdocstrings:
-      custom_templates: templates
+  - search
+  - mkdocstrings
+markdown_extensions:
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
 extra:
   version:
     provider: mike
