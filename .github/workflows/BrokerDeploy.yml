@@ -1,0 +1,22 @@
+name: Deploy Production
+
+on:
+  release:
+    types: [ released ]
+
+
+jobs:
+  test:
+    name: Tests
+    uses: ./.github/workflows/BrokerTest.yml
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example deploy
+        run: echo "This is an example production deployment"
+
+  documentation:
+    name: Documentation
+    uses: ../.github/workflows/DocumentationDeploy.yml

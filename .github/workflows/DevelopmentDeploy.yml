@@ -1,0 +1,12 @@
+name: Deploy Development
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Development Broker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Development deploy
+        run: echo "This is an example development deployment"

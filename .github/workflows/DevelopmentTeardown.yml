@@ -1,0 +1,12 @@
+name: Teardown Development
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Teardown Development Broker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Development teardown
+        run: echo "This is an example development teardown"
