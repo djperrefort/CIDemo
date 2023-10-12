@@ -38,10 +38,10 @@ jobs:
           git config --global user.email docs@dummy.bot.com
 
       - name: Build and publish
-        run: poetry run mike deploy --push ${{ inputs.version || 'develop' }}
+        run: mike deploy --push ${{ inputs.version || 'develop' }}
 
       - name: Update latest version
         if: ${{ inputs.latest }}
         run: |
-          poetry run mike alias --update-aliases --push ${{ inputs.version }} latest
-          poetry run mike set-default --push latest
+          mike alias --update-aliases --push ${{ inputs.version }} latest
+          mike set-default --push latest
