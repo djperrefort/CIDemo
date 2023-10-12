@@ -18,6 +18,9 @@ jobs:
         run: echo "This is an example production deployment"
 
   documentation:
-    needs: [ deploy ]
     name: Documentation
+    needs: [ deploy ]
     uses: ./.github/workflows/DocumentationPublish.yml
+    with:
+        version: ${{ github.event.release.tag_name }}
+        latest: true
