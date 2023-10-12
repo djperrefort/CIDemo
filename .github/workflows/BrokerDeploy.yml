@@ -12,10 +12,12 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    needs: [ test ]
     steps:
       - name: Example deploy
         run: echo "This is an example production deployment"
 
   documentation:
+    needs: [ deploy ]
     name: Documentation
     uses: ./.github/workflows/DocumentationPublish.yml
